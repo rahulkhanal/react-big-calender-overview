@@ -40,8 +40,7 @@ function App() {
     if (event.disabled) {
       return {
         style: {
-          cursor: "not-allowed",
-          background: 'none',
+          display: 'none',
         },
       }
     }
@@ -82,7 +81,8 @@ function App() {
     setCurrentDate(new Date())
   }
   return (
-    <>
+    // everything here:
+    <> 
       <div className="myCustomHeight">
         <Calendar
           localizer={localizer}
@@ -93,7 +93,7 @@ function App() {
           onSelectSlot={handleSelectSlot}
           eventPropGetter={eventPropGetter}
           dayPropGetter={dayPropGetter}
-          style={{ height: 900 }}
+          style={{ height: 800, width: '90%', margin: "auto" }}
           date={currentDate}
           onNavigate={(date) => setCurrentDate(date)}
         />
